@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Infix {
 
-    public static ArrayDeque<Object> infixToPostfix(ArrayDeque<Object> tokens) {
+    public static Double infixToPostfix(ArrayDeque<Object> tokens) {
         ArrayDeque<Object> outputQueue = new ArrayDeque<>();
         Deque<Character> operatorStack = new ArrayDeque<>();
 
@@ -58,7 +58,7 @@ public class Infix {
             outputQueue.add(operatorStack.pop());
         }
 
-        return outputQueue;
+        return Postfix.postfix(outputQueue);
     }
 
     public static ArrayDeque<Object> parseExpression(String expression) {
